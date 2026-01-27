@@ -17,18 +17,15 @@ navLinks?.querySelectorAll('a').forEach(link => {
     });
 });
 
-// ===== Navbar Scroll Effect =====
-const navbar = document.querySelector('.navbar');
+// ===== Vinyl Record Interaction =====
+const vinyl = document.querySelector('.vinyl');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
+vinyl?.addEventListener('click', () => {
+    const isPaused = vinyl.style.animationPlayState === 'paused';
+    vinyl.style.animationPlayState = isPaused ? 'running' : 'paused';
 });
 
-// ===== Smooth Scroll for Anchor Links =====
+// ===== Smooth Scroll =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -48,36 +45,83 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // ===== Intersection Observer for Animations =====
 const observerOptions = {
-    threshold: 0.1,
+    threshold: 0.15,
     rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
         }
     });
 }, observerOptions);
 
-// Observe elements for scroll animations
-document.querySelectorAll('.project-card, .vibe-card, .section-header').forEach(el => {
+// Apply initial styles and observe
+document.querySelectorAll('.month-card, .about-grid, .contact-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
 });
 
-// ===== Vinyl Hover Pause =====
-const vinyl = document.querySelector('.vinyl');
-const vinylContainer = document.querySelector('.vinyl-container');
-
-vinylContainer?.addEventListener('mouseenter', () => {
-    vinyl.style.animationPlayState = 'paused';
+// Stagger animation for month cards
+document.querySelectorAll('.month-card').forEach((card, index) => {
+    card.style.transitionDelay = `${index * 0.1}s`;
 });
 
-vinylContainer?.addEventListener('mouseleave', () => {
-    vinyl.style.animationPlayState = 'running';
+// ===== Parallax for Flowers =====
+let ticking = false;
+
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        requestAnimationFrame(() => {
+            const scrolled = window.scrollY;
+            document.querySelectorAll('.mura-flower').forEach((flower, index) => {
+                const speed = 0.1 + (index * 0.05);
+                flower.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+            ticking = false;
+        });
+        ticking = true;
+    }
 });
 
-// ===== Easter Egg =====
-console.log('%c☀️ 13 Months of Sunshine', 'font-size: 24px; font-weight: bold;');
-console.log('%cWelcome to Aaron\'s portfolio!', 'font-size: 14px;');
-console.log('%cBuilding at the intersection of economics, tech, and culture.', 'font-size: 14px; color: #078930;');
+// ===== Easter Eggs =====
+console.log('%c☀️ 13 Months of Sunshine', 'font-size: 28px; font-weight: bold; color: #FCDD09; text-shadow: 2px 2px 0 #078930;');
+console.log('%cWelcome to Aaron\'s world!', 'font-size: 16px; font-weight: bold;');
+console.log('%cBuilding at the intersection of economics, technology, and culture.', 'font-size: 14px; color: #078930;');
+console.log('%c🇪🇹', 'font-size: 40px;');
+
+// Konami code easter egg
+let konamiProgress = 0;
+const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === konamiCode[konamiProgress]) {
+        konamiProgress++;
+        if (konamiProgress === konamiCode.length) {
+            document.body.style.animation = 'rainbow 2s linear infinite';
+            console.log('%c🎉 You found the secret! 🇪🇹', 'font-size: 24px;');
+            konamiProgress = 0;
+            
+            // Add rainbow animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes rainbow {
+                    0% { filter: hue-rotate(0deg); }
+                    100% { filter: hue-rotate(360deg); }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Remove after 5 seconds
+            setTimeout(() => {
+                document.body.style.animation = '';
+            }, 5000);
+        }
+    } else {
+        konamiProgress = 0;
+    }
+});
