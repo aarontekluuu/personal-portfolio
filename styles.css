@@ -948,6 +948,11 @@ body {
     color: var(--black);
 }
 
+.badge-done {
+    background: var(--green);
+    color: var(--white);
+}
+
 .month-card h3 {
     font-family: var(--font);
     font-size: 1.75rem;
