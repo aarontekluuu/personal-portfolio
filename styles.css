@@ -147,42 +147,60 @@ body {
     animation: petalPulse 3s ease-in-out infinite;
 }
 
-.mf-1 { top: 8%; left: 4%; animation-delay: 0s; }
-.mf-2 { top: 22%; right: 5%; animation-delay: -1.5s; }
-.mf-3 { top: 55%; left: 2%; animation-delay: -3s; }
-.mf-4 { top: 78%; right: 3%; animation-delay: -4.5s; }
+.mf-1 { top: 8%; left: 3%; animation-delay: 0s; }
+.mf-2 { top: 18%; right: 4%; animation-delay: -1s; }
+.mf-3 { top: 45%; left: 1%; animation-delay: -2s; }
+.mf-4 { top: 72%; right: 2%; animation-delay: -3s; }
+.mf-5 { top: 35%; right: 6%; animation-delay: -4s; }
+.mf-6 { top: 88%; left: 5%; animation-delay: -5s; }
 
 .mf-1 .flower-svg { 
-    width: 100px; 
-    height: 100px; 
+    width: 110px; 
+    height: 110px; 
     animation-delay: 0s;
     animation-duration: 2.2s;
 }
-.mf-1 .petals-group { animation-delay: 0s; }
+.mf-1 .petals-group { animation-delay: 0s; animation-duration: 2.8s; }
 
 .mf-2 .flower-svg { 
-    width: 80px; 
-    height: 80px; 
+    width: 85px; 
+    height: 85px; 
     animation-delay: -0.5s;
     animation-duration: 1.8s;
 }
-.mf-2 .petals-group { animation-delay: -0.7s; }
+.mf-2 .petals-group { animation-delay: -0.7s; animation-duration: 2.5s; }
 
 .mf-3 .flower-svg { 
-    width: 70px; 
-    height: 70px; 
+    width: 75px; 
+    height: 75px; 
     animation-delay: -1s;
     animation-duration: 2.5s;
 }
-.mf-3 .petals-group { animation-delay: -1.3s; }
+.mf-3 .petals-group { animation-delay: -1.3s; animation-duration: 3.2s; }
 
 .mf-4 .flower-svg { 
-    width: 85px; 
-    height: 85px; 
+    width: 95px; 
+    height: 95px; 
     animation-delay: -1.5s;
     animation-duration: 2s;
 }
-.mf-4 .petals-group { animation-delay: -2s; }
+.mf-4 .petals-group { animation-delay: -2s; animation-duration: 2.6s; }
+
+.mf-5 .flower-svg { 
+    width: 65px; 
+    height: 65px; 
+    animation-delay: -2s;
+    animation-duration: 2.3s;
+}
+.mf-5 .petals-group { animation-delay: -2.5s; animation-duration: 3s; }
+
+.mf-6 .flower-svg { 
+    width: 80px; 
+    height: 80px; 
+    animation-delay: -2.8s;
+    animation-duration: 1.9s;
+}
+.mf-6 .petals-group { animation-delay: -3s; animation-duration: 2.7s; }
 
 /* Main float animation - more dynamic */
 @keyframes floatFlower {
@@ -478,14 +496,37 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: linear-gradient(
-        135deg,
-        rgba(255,255,255,0.2) 0%,
-        transparent 35%,
-        transparent 65%,
-        rgba(0,0,0,0.15) 100%
-    );
+    background: 
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.25) 0%,
+            transparent 30%,
+            transparent 70%,
+            rgba(0,0,0,0.2) 100%
+        ),
+        conic-gradient(
+            from 0deg at 50% 50%,
+            transparent 0deg,
+            rgba(255,255,255,0.05) 30deg,
+            transparent 60deg,
+            rgba(255,255,255,0.08) 90deg,
+            transparent 120deg,
+            rgba(255,255,255,0.05) 150deg,
+            transparent 180deg,
+            rgba(255,255,255,0.08) 210deg,
+            transparent 240deg,
+            rgba(255,255,255,0.05) 270deg,
+            transparent 300deg,
+            rgba(255,255,255,0.08) 330deg,
+            transparent 360deg
+        );
     pointer-events: none;
+    animation: vinylShimmer 8s linear infinite;
+}
+
+@keyframes vinylShimmer {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
 }
 
 /* Tonearm removed - vinyl is standalone background element */
@@ -1261,8 +1302,13 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.hero-content { animation: fadeInUp 0.8s ease-out 0.2s both; }
-.vinyl-wrapper { animation: fadeInUp 0.8s ease-out both; }
+@keyframes fadeInScale {
+    from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+    to { opacity: 0.25; transform: translate(-50%, -50%) scale(1); }
+}
+
+.hero-content { animation: fadeInUp 0.8s ease-out 0.3s both; }
+.vinyl-bg { animation: fadeInScale 1.2s ease-out 0.1s both; }
 
 /* Scroll reveal */
 .month-card, .contact-card, .about-grid {
