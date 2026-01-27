@@ -1,34 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aaron Teklu - Economics Student at USC, Developer, and Tech Enthusiast">
-    <meta name="keywords" content="Aaron Teklu, developer, USC, economics, portfolio, software">
+    <meta name="description" content="Aaron Teklu - Economics Student at USC, Crypto/DeFi Researcher, Builder">
+    <meta name="keywords" content="Aaron Teklu, developer, USC, economics, crypto, DeFi, portfolio">
     <meta name="author" content="Aaron Teklu">
-    <meta name="theme-color" content="#0a0a0a">
-    <meta property="og:title" content="Aaron Teklu | Portfolio">
-    <meta property="og:description" content="Economics Student at USC with a passion for technology">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Aaron Teklu | ☀️ 13 Months of Sunshine">
+    <meta property="og:description" content="Economics Student at USC | Crypto/DeFi Research | Building the future">
     <meta property="og:type" content="website">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>">
     <title>Aaron Teklu | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loader">
-        <div class="loader-content">
-            <span class="loader-logo">AT</span>
-            <div class="loader-bar"><div class="loader-progress"></div></div>
-        </div>
+    <!-- Murakami-style floating flowers -->
+    <div class="floating-flowers" aria-hidden="true">
+        <div class="flower flower-1">✿</div>
+        <div class="flower flower-2">❀</div>
+        <div class="flower flower-3">✿</div>
+        <div class="flower flower-4">❀</div>
+        <div class="flower flower-5">✿</div>
+        <div class="flower flower-6">❀</div>
     </div>
 
     <nav class="navbar">
         <div class="nav-content">
-            <a href="#" class="logo">AT</a>
+            <a href="#" class="logo">
+                <span class="logo-geez">አ</span>
+                <span class="logo-text">AT</span>
+            </a>
             <button class="mobile-menu-btn" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
@@ -36,31 +41,41 @@
             </button>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="theme-toggle" aria-label="Toggle theme">
-                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-            </button>
         </div>
     </nav>
 
     <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content fade-in">
-            <p class="greeting">Hey there, I'm</p>
-            <h1><span class="highlight">Aaron Teklu</span></h1>
-            <p class="role">I'm a <span class="typed-text"></span><span class="cursor">|</span></p>
-            <p class="tagline">Economics student at <span class="usc">USC</span> exploring the intersection of technology, markets, and human behavior.</p>
+        <!-- Vinyl record background element -->
+        <div class="vinyl-container" aria-hidden="true">
+            <div class="vinyl">
+                <div class="vinyl-label">
+                    <span class="vinyl-text">AT</span>
+                </div>
+                <div class="vinyl-grooves"></div>
+            </div>
+        </div>
+        
+        <!-- Ethiopian pattern overlay -->
+        <div class="ethiopian-pattern" aria-hidden="true"></div>
+        
+        <div class="hero-content">
+            <div class="hero-greeting">
+                <span class="geez-accent">ሰላም</span>
+                <span class="greeting-text">Hey, I'm</span>
+            </div>
+            <h1 class="hero-name">
+                <span class="name-main">Aaron</span>
+                <span class="name-last">Teklu</span>
+            </h1>
+            <p class="hero-tagline">
+                <span class="usc">USC</span> Economics · Crypto/DeFi Research · Building Cool Stuff
+            </p>
             <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#projects" class="btn btn-primary">See My Work</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                <a href="resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    Resume
-                </a>
             </div>
             <div class="social-links">
                 <a href="https://github.com/aaronteklu" target="_blank" rel="noopener" aria-label="GitHub">
@@ -74,106 +89,36 @@
                 </a>
             </div>
         </div>
-        <a href="#about" class="scroll-indicator" aria-label="Scroll down">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-        </a>
     </section>
 
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title reveal">About Me</h2>
-            <div class="about-content reveal">
-                <div class="about-text">
-                    <p>I'm currently studying <strong>Economics</strong> at the <strong>University of Southern California</strong>, where I explore the fascinating intersection of economic theory, data analysis, and technology.</p>
-                    <p>My interests span from market dynamics and behavioral economics to building software that solves real problems. I believe the best solutions come from understanding both the human and technical sides of challenges.</p>
-                    <p>When I'm not studying, you'll find me working on side projects, experimenting with new technologies, or diving deep into topics that catch my curiosity.</p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <span class="stat-number">USC</span>
-                        <span class="stat-label">University</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">Econ</span>
-                        <span class="stat-label">Major</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">2025</span>
-                        <span class="stat-label">Class</span>
-                    </div>
-                </div>
+            <div class="section-header">
+                <span class="section-geez">ስለ እኔ</span>
+                <h2 class="section-title">About Me</h2>
             </div>
-        </div>
-    </section>
-
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title reveal">Skills & Expertise</h2>
-            <p class="section-subtitle reveal">Technologies and areas I work with</p>
-            
-            <div class="skills-container">
-                <div class="skills-visual reveal">
-                    <div class="skill-bar-group">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Python</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>JavaScript</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>SQL</span>
-                                <span>75%</span>
-                            </div>
-                            <div class="skill-bar"><div class="skill-progress" data-progress="75"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>R / Stata</span>
-                                <span>70%</span>
-                            </div>
-                            <div class="skill-bar"><div class="skill-progress" data-progress="70"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>Data Analysis</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div>
-                        </div>
-                    </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm an <strong>Economics student at USC</strong> exploring the intersection of markets, technology, and human behavior.</p>
+                    <p>Currently deep in <strong>crypto and DeFi research</strong> — fascinated by how decentralized systems can reshape finance and create new economic possibilities.</p>
+                    <p>When I'm not studying or researching, I'm building projects, DJing, or diving into whatever catches my curiosity.</p>
                 </div>
-                
-                <div class="skills-grid reveal">
-                    <div class="skill-category">
-                        <div class="skill-icon">📊</div>
-                        <h3>Economics</h3>
-                        <p>Microeconomics, Econometrics, Market Research, Behavioral Analysis</p>
+                <div class="about-vibes">
+                    <div class="vibe-card">
+                        <span class="vibe-emoji">🎓</span>
+                        <span class="vibe-text">USC '25</span>
                     </div>
-                    <div class="skill-category">
-                        <div class="skill-icon">💻</div>
-                        <h3>Development</h3>
-                        <p>Web Development, Data Pipelines, APIs, Automation Scripts</p>
+                    <div class="vibe-card">
+                        <span class="vibe-emoji">📊</span>
+                        <span class="vibe-text">Economics</span>
                     </div>
-                    <div class="skill-category">
-                        <div class="skill-icon">🛠️</div>
-                        <h3>Tools</h3>
-                        <p>Git, VS Code, Jupyter, Tableau, Excel/Sheets</p>
+                    <div class="vibe-card">
+                        <span class="vibe-emoji">🔗</span>
+                        <span class="vibe-text">DeFi</span>
                     </div>
-                    <div class="skill-category">
-                        <div class="skill-icon">🚀</div>
-                        <h3>Interests</h3>
-                        <p>Fintech, AI/ML, Product Development, Startups</p>
+                    <div class="vibe-card">
+                        <span class="vibe-emoji">🎧</span>
+                        <span class="vibe-text">DJ</span>
                     </div>
                 </div>
             </div>
@@ -182,60 +127,77 @@
 
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title reveal">Projects</h2>
-            <p class="section-subtitle reveal">Here are some things I've been working on</p>
-            <div class="projects-grid">
-                <article class="project-card reveal">
-                    <div class="project-icon">📈</div>
-                    <h3>Economic Data Dashboard</h3>
-                    <p>Interactive visualization tool for exploring economic indicators and trends using Python and Plotly.</p>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Data Viz</span>
-                        <span>APIs</span>
+            <div class="section-header">
+                <span class="section-geez">ፕሮጀክቶች</span>
+                <h2 class="section-title">Projects</h2>
+                <p class="section-subtitle">☀️ 13 months of sunshine, 13 months of building</p>
+            </div>
+            
+            <div class="projects-showcase">
+                <!-- Swap -->
+                <article class="project-card project-swap">
+                    <div class="project-month">Month 1</div>
+                    <div class="project-header">
+                        <h3>Swap</h3>
+                        <span class="project-status">In Progress</span>
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">View Project →</a>
+                    <p class="project-desc">Currently building something exciting in the DeFi space.</p>
+                    <div class="project-tags">
+                        <span>DeFi</span>
+                        <span>Crypto</span>
+                        <span>Building</span>
                     </div>
                 </article>
-                <article class="project-card reveal">
-                    <div class="project-icon">🤖</div>
-                    <h3>AI Assistant Integration</h3>
-                    <p>Personal automation system integrating AI capabilities for productivity and task management.</p>
-                    <div class="project-tags">
-                        <span>JavaScript</span>
-                        <span>AI/ML</span>
-                        <span>Automation</span>
+
+                <!-- Saba -->
+                <article class="project-card project-saba">
+                    <div class="project-month">Month 2</div>
+                    <div class="project-header">
+                        <h3>Saba</h3>
+                        <span class="project-status">In Progress</span>
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">View Project →</a>
+                    <p class="project-desc">A project close to my roots. More details coming soon.</p>
+                    <div class="project-tags">
+                        <span>Product</span>
+                        <span>Culture</span>
+                        <span>Tech</span>
                     </div>
                 </article>
-                <article class="project-card reveal">
-                    <div class="project-icon">💰</div>
-                    <h3>Market Analysis Tool</h3>
-                    <p>Research project analyzing market trends and consumer behavior patterns using econometric methods.</p>
-                    <div class="project-tags">
-                        <span>R</span>
-                        <span>Statistics</span>
-                        <span>Research</span>
+
+                <!-- Pear Mobile -->
+                <article class="project-card project-pear">
+                    <div class="project-month">Month 3</div>
+                    <div class="project-header">
+                        <h3>Pear Mobile</h3>
+                        <span class="project-status status-winner">🏆 1st Place</span>
                     </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link">View Project →</a>
+                    <p class="project-desc">First place winner at pear.protocol hackathon. Built something that impressed the judges.</p>
+                    <div class="project-tags">
+                        <span>Hackathon</span>
+                        <span>Mobile</span>
+                        <span>Winner</span>
                     </div>
                 </article>
+            </div>
+
+            <div class="sunshine-decoration" aria-hidden="true">
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
+                <div class="sun-ray"></div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title reveal">Let's Connect</h2>
-            <div class="contact-content reveal">
-                <p>I'm always interested in hearing about new opportunities, interesting projects, or just having a conversation. Feel free to reach out!</p>
-                <a href="mailto:ateklu@usc.edu" class="btn btn-primary btn-large">Say Hello</a>
+            <div class="section-header">
+                <span class="section-geez">ይገናኙ</span>
+                <h2 class="section-title">Let's Connect</h2>
+            </div>
+            <div class="contact-content">
+                <p>Always down to chat about crypto, economics, or whatever interesting projects you're working on.</p>
+                <a href="mailto:ateklu@usc.edu" class="btn btn-primary btn-large">Say Hello ✨</a>
                 <div class="contact-alt">
-                    <p>Or find me on</p>
                     <div class="social-links">
                         <a href="https://github.com/aaronteklu" target="_blank" rel="noopener">GitHub</a>
                         <a href="https://linkedin.com/in/aaronteklu" target="_blank" rel="noopener">LinkedIn</a>
@@ -249,36 +211,18 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <span class="footer-logo">AT</span>
-                    <p>Building things at the intersection of economics & technology.</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-col">
-                        <h4>Navigate</h4>
-                        <a href="#about">About</a>
-                        <a href="#skills">Skills</a>
-                        <a href="#projects">Projects</a>
-                        <a href="#contact">Contact</a>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Connect</h4>
-                        <a href="https://github.com/aaronteklu" target="_blank" rel="noopener">GitHub</a>
-                        <a href="https://linkedin.com/in/aaronteklu" target="_blank" rel="noopener">LinkedIn</a>
-                        <a href="mailto:ateklu@usc.edu">Email</a>
-                    </div>
+                    <span class="footer-logo">
+                        <span class="logo-geez">አ</span>AT
+                    </span>
+                    <p>Building at the intersection of economics, tech, and culture.</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>Designed & Built with ☕ by Aaron Teklu</p>
-                <p class="footer-sub">© 2025 — All rights reserved</p>
+                <p>Designed & Built with ☀️ by Aaron Teklu</p>
+                <p class="footer-sub">© 2025 — 13 months of sunshine</p>
             </div>
         </div>
     </footer>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" aria-label="Back to top">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-    </button>
 
     <script src="script.js"></script>
 </body>
