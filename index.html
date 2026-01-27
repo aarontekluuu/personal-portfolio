@@ -23,9 +23,7 @@
     <title>Aaron Teklu | Portfolio</title>
     
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- SF Pro falls back gracefully on non-Apple devices -->
 </head>
 <body>
     <!-- Loading Screen -->
@@ -157,28 +155,17 @@
 
     <main>
         <section class="hero" aria-label="Introduction">
-            <!-- Vinyl turntable -->
-            <div class="vinyl-wrapper">
-                <div class="turntable">
-                    <div class="vinyl" role="button" tabindex="0" aria-label="Click to play or pause the vinyl animation" title="Click to play/pause">
-                        <div class="vinyl-grooves"></div>
-                        <div class="vinyl-label">
-                            <div class="label-inner">
-                                <span class="label-text">AT</span>
-                                <span class="label-sub">2025</span>
-                            </div>
+            <!-- Vinyl CENTERED behind the name as background element -->
+            <div class="vinyl-bg" aria-hidden="true">
+                <div class="vinyl" role="button" tabindex="0" aria-label="Click to play or pause the vinyl animation" title="Click to play/pause">
+                    <div class="vinyl-grooves"></div>
+                    <div class="vinyl-label">
+                        <div class="label-inner">
+                            <span class="label-text">AT</span>
+                            <span class="label-sub">2025</span>
                         </div>
-                        <div class="vinyl-shine"></div>
                     </div>
-                    <div class="tonearm" aria-hidden="true">
-                        <div class="arm-base"></div>
-                        <div class="arm-shaft"></div>
-                        <div class="arm-head"></div>
-                    </div>
-                </div>
-                <div class="now-playing" aria-live="polite">
-                    <span class="np-label">Now Building</span>
-                    <span class="np-track">The Future ✨</span>
+                    <div class="vinyl-shine"></div>
                 </div>
             </div>
             
@@ -217,6 +204,12 @@
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         <span>LinkedIn</span>
                     </a>
+                </div>
+                
+                <!-- Now Playing (moved below social) -->
+                <div class="now-playing" aria-live="polite">
+                    <span class="np-label">Now Building</span>
+                    <span class="np-track">The Future ✨</span>
                 </div>
             </div>
             
