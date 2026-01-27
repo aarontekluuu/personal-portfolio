@@ -3,22 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aaron Teklu - Economics Student at USC, Crypto/DeFi Researcher, Builder">
-    <meta name="keywords" content="Aaron Teklu, developer, USC, economics, crypto, DeFi, portfolio">
+    <meta name="description" content="Aaron Teklu - Economics Student at USC, Crypto/DeFi Researcher, and Builder. Exploring markets, technology, and culture.">
+    <meta name="keywords" content="Aaron Teklu, USC, economics, crypto, DeFi, developer, portfolio, Ethiopia">
     <meta name="author" content="Aaron Teklu">
     <meta name="theme-color" content="#FFFEF5">
+    
+    <!-- Open Graph / Social -->
     <meta property="og:title" content="Aaron Teklu | ☀️ 13 Months of Sunshine">
-    <meta property="og:description" content="Economics Student at USC | Crypto/DeFi Research | Building the future">
+    <meta property="og:description" content="USC Economics · Crypto/DeFi Research · Building the future">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aaronteklu.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aaron Teklu | Portfolio">
+    <meta name="twitter:description" content="USC Economics · Crypto/DeFi Research · Building the future">
+    
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>">
+    
     <title>Aaron Teklu | Portfolio</title>
+    
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Murakami-style smiling flowers with SVG faces -->
+    <!-- Loading Screen -->
+    <div class="loader" aria-hidden="true">
+        <div class="loader-content">
+            <div class="loader-flower">
+                <svg viewBox="0 0 100 100" width="80" height="80">
+                    <g class="loader-petals">
+                        <circle cx="50" cy="20" r="16" fill="#078930"/>
+                        <circle cx="71" cy="29" r="16" fill="#FCDD09"/>
+                        <circle cx="80" cy="50" r="16" fill="#DA121A"/>
+                        <circle cx="71" cy="71" r="16" fill="#078930"/>
+                        <circle cx="50" cy="80" r="16" fill="#FCDD09"/>
+                        <circle cx="29" cy="71" r="16" fill="#DA121A"/>
+                        <circle cx="20" cy="50" r="16" fill="#078930"/>
+                        <circle cx="29" cy="29" r="16" fill="#FCDD09"/>
+                    </g>
+                    <circle cx="50" cy="50" r="20" fill="white"/>
+                    <circle cx="42" cy="46" r="4" fill="#1a1a1a"/>
+                    <circle cx="58" cy="46" r="4" fill="#1a1a1a"/>
+                    <path d="M 38 56 Q 50 66 62 56" stroke="#1a1a1a" stroke-width="3" fill="none" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <span class="loader-text">Loading sunshine...</span>
+        </div>
+    </div>
+
+    <!-- Murakami-style smiling flowers -->
     <div class="murakami-flowers" aria-hidden="true">
         <div class="mura-flower mf-1">
             <svg viewBox="0 0 100 100" class="flower-svg">
@@ -101,13 +136,13 @@
         <div class="banner-stripe red"></div>
     </div>
 
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-content">
-            <a href="#" class="logo">
-                <span class="logo-geez">አ</span>
+            <a href="#" class="logo" aria-label="Aaron Teklu - Home">
+                <span class="logo-geez" aria-hidden="true">አ</span>
                 <span class="logo-text">AT</span>
             </a>
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -120,227 +155,229 @@
         </div>
     </nav>
 
-    <section class="hero">
-        <!-- Vinyl record with tonearm -->
-        <div class="vinyl-wrapper">
-            <div class="turntable">
-                <div class="vinyl" title="Click to play/pause">
-                    <div class="vinyl-grooves"></div>
-                    <div class="vinyl-label">
-                        <div class="label-inner">
-                            <span class="label-text">AT</span>
-                            <span class="label-sub">2025</span>
+    <main>
+        <section class="hero" aria-label="Introduction">
+            <!-- Vinyl turntable -->
+            <div class="vinyl-wrapper">
+                <div class="turntable">
+                    <div class="vinyl" role="button" tabindex="0" aria-label="Click to play or pause the vinyl animation" title="Click to play/pause">
+                        <div class="vinyl-grooves"></div>
+                        <div class="vinyl-label">
+                            <div class="label-inner">
+                                <span class="label-text">AT</span>
+                                <span class="label-sub">2025</span>
+                            </div>
                         </div>
+                        <div class="vinyl-shine"></div>
                     </div>
-                    <div class="vinyl-shine"></div>
-                </div>
-                <div class="tonearm">
-                    <div class="arm-base"></div>
-                    <div class="arm-shaft"></div>
-                    <div class="arm-head"></div>
-                </div>
-            </div>
-            <div class="now-playing">
-                <span class="np-label">Now Building</span>
-                <span class="np-track">The Future ✨</span>
-            </div>
-        </div>
-        
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="geez-text">ሰላም</span>
-                <span class="divider">·</span>
-                <span class="english-text">Peace</span>
-            </div>
-            <h1 class="hero-name">
-                <span class="name-line name-first">Aaron</span>
-                <span class="name-line name-last">Teklu</span>
-            </h1>
-            <p class="hero-tagline">
-                <span class="tag"><span class="usc">USC</span> Economics</span>
-                <span class="tag-sep">→</span>
-                <span class="tag">Crypto/DeFi</span>
-                <span class="tag-sep">→</span>
-                <span class="tag">Builder</span>
-            </p>
-            <div class="cta-group">
-                <a href="#projects" class="btn btn-primary">
-                    <span>See My Work</span>
-                    <span class="btn-arrow">↓</span>
-                </a>
-                <a href="mailto:ateklu@usc.edu" class="btn btn-ghost">
-                    <span>ateklu@usc.edu</span>
-                </a>
-            </div>
-            <div class="social-row">
-                <a href="https://github.com/aaronteklu" target="_blank" rel="noopener" class="social-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    <span>GitHub</span>
-                </a>
-                <a href="https://linkedin.com/in/aaronteklu" target="_blank" rel="noopener" class="social-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    <span>LinkedIn</span>
-                </a>
-            </div>
-        </div>
-        
-        <div class="scroll-hint">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-intro">
-                    <span class="section-label">
-                        <span class="geez-small">ስለ እኔ</span> · About
-                    </span>
-                    <h2>Building at the<br/>intersection of<br/><span class="highlight-green">economics</span>,<br/><span class="highlight-yellow">technology</span>, &<br/><span class="highlight-red">culture</span>.</h2>
-                </div>
-                <div class="about-details">
-                    <p class="lead">Economics student at USC exploring how markets, incentives, and technology shape human behavior.</p>
-                    <p>Deep in <strong>crypto and DeFi research</strong> — protocols, tokenomics, and building tools that make decentralized finance more accessible.</p>
-                    <p>Ethiopian roots, LA vibes. <strong>13 months of sunshine</strong> mindset — warm, optimistic, always building something new.</p>
-                    <div class="about-tags">
-                        <span class="about-tag tag-green">🎓 USC '25</span>
-                        <span class="about-tag tag-yellow">📊 Economics</span>
-                        <span class="about-tag tag-red">🔗 DeFi</span>
-                        <span class="about-tag tag-black">🎧 DJ</span>
+                    <div class="tonearm" aria-hidden="true">
+                        <div class="arm-base"></div>
+                        <div class="arm-shaft"></div>
+                        <div class="arm-head"></div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="eth-pattern-corner" aria-hidden="true"></div>
-    </section>
-
-    <section id="projects" class="projects">
-        <div class="sunshine-rays" aria-hidden="true">
-            <div class="sun-center">☀️</div>
-            <div class="ray ray-1"></div>
-            <div class="ray ray-2"></div>
-            <div class="ray ray-3"></div>
-            <div class="ray ray-4"></div>
-            <div class="ray ray-5"></div>
-            <div class="ray ray-6"></div>
-            <div class="ray ray-7"></div>
-            <div class="ray ray-8"></div>
-        </div>
-        
-        <div class="container">
-            <div class="projects-header">
-                <span class="section-label">
-                    <span class="geez-small">ፕሮጀክቶች</span> · Projects
-                </span>
-                <h2><span class="sunshine-text">13 Months of</span><br/><span class="sunshine-text">Sunshine</span> ☀️</h2>
-                <p class="projects-sub">A year of building. One project at a time.</p>
+                <div class="now-playing" aria-live="polite">
+                    <span class="np-label">Now Building</span>
+                    <span class="np-track">The Future ✨</span>
+                </div>
             </div>
             
-            <div class="month-grid">
-                <!-- Swap -->
-                <article class="month-card month-green" data-project="swap">
-                    <div class="card-accent"></div>
-                    <div class="month-header">
-                        <span class="month-num">01</span>
-                        <span class="month-label">መስከረም</span>
-                    </div>
-                    <div class="project-badge badge-active">
-                        <span class="badge-dot"></span> Building
-                    </div>
-                    <h3>Swap</h3>
-                    <p>Building something exciting in DeFi. Token swaps, liquidity pools, and beyond.</p>
-                    <div class="project-stack">
-                        <span>DeFi</span>
-                        <span>Crypto</span>
-                        <span>Solidity</span>
-                    </div>
-                    <div class="card-icon">🔄</div>
-                </article>
-
-                <!-- Saba -->
-                <article class="month-card month-yellow" data-project="saba">
-                    <div class="card-accent"></div>
-                    <div class="month-header">
-                        <span class="month-num">02</span>
-                        <span class="month-label">ጥቅምት</span>
-                    </div>
-                    <div class="project-badge badge-active">
-                        <span class="badge-dot"></span> Building
-                    </div>
-                    <h3>Saba</h3>
-                    <p>A project close to my roots. Bridging culture and technology in meaningful ways.</p>
-                    <div class="project-stack">
-                        <span>Culture</span>
-                        <span>Product</span>
-                        <span>Community</span>
-                    </div>
-                    <div class="card-icon">🇪🇹</div>
-                </article>
-
-                <!-- Pear Mobile -->
-                <article class="month-card month-gold" data-project="pear">
-                    <div class="card-accent"></div>
-                    <div class="month-header">
-                        <span class="month-num">03</span>
-                        <span class="month-label">ኅዳር</span>
-                    </div>
-                    <div class="project-badge badge-winner">🏆 1st Place</div>
-                    <h3>Pear Mobile</h3>
-                    <p>First place at pear.protocol hackathon. Mobile-first protocol interaction done right.</p>
-                    <div class="project-stack">
-                        <span>Mobile</span>
-                        <span>Protocol</span>
-                        <span>React Native</span>
-                    </div>
-                    <div class="card-icon">🍐</div>
-                </article>
-
-                <!-- Coming Soon -->
-                <article class="month-card month-future">
-                    <div class="card-accent"></div>
-                    <div class="month-header">
-                        <span class="month-num">04+</span>
-                        <span class="month-label">ታኅሣስ...</span>
-                    </div>
-                    <h3>More Coming</h3>
-                    <p>The journey continues. New projects, new challenges, endless sunshine.</p>
-                    <div class="card-icon">✨</div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-card">
-                <span class="section-label">
-                    <span class="geez-small">ይገናኙ</span> · Connect
-                </span>
-                <h2>Let's Build<br/>Something Together</h2>
-                <p>Crypto, economics, or interesting ideas — always down to chat.</p>
-                <div class="contact-actions">
-                    <a href="mailto:ateklu@usc.edu" class="btn btn-primary btn-large">
-                        <span>Say Hello</span>
-                        <span class="btn-emoji">👋</span>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="geez-text" aria-label="Selam (Peace in Amharic)">ሰላም</span>
+                    <span class="divider" aria-hidden="true">·</span>
+                    <span class="english-text">Peace</span>
+                </div>
+                <h1 class="hero-name">
+                    <span class="name-line name-first">Aaron</span>
+                    <span class="name-line name-last">Teklu</span>
+                </h1>
+                <p class="hero-tagline">
+                    <span class="tag"><span class="usc">USC</span> Economics</span>
+                    <span class="tag-sep" aria-hidden="true">→</span>
+                    <span class="tag">Crypto/DeFi</span>
+                    <span class="tag-sep" aria-hidden="true">→</span>
+                    <span class="tag">Builder</span>
+                </p>
+                <div class="cta-group">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>See My Work</span>
+                        <span class="btn-arrow" aria-hidden="true">↓</span>
+                    </a>
+                    <a href="mailto:ateklu@usc.edu" class="btn btn-ghost">
+                        <span>ateklu@usc.edu</span>
                     </a>
                 </div>
-                <div class="contact-links">
-                    <a href="https://github.com/aaronteklu" target="_blank">GitHub</a>
-                    <span class="link-dot">·</span>
-                    <a href="https://linkedin.com/in/aaronteklu" target="_blank">LinkedIn</a>
-                    <span class="link-dot">·</span>
-                    <a href="mailto:ateklu@usc.edu">ateklu@usc.edu</a>
+                <div class="social-row">
+                    <a href="https://github.com/aaronteklu" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/in/aaronteklu" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        <span>LinkedIn</span>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+            
+            <div class="scroll-hint" aria-hidden="true">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
 
-    <footer>
+        <section id="about" class="about" aria-label="About Aaron">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-intro">
+                        <span class="section-label">
+                            <span class="geez-small" aria-label="About me in Amharic">ስለ እኔ</span> · About
+                        </span>
+                        <h2>Building at the<br/>intersection of<br/><span class="highlight-green">economics</span>,<br/><span class="highlight-yellow">technology</span>, &<br/><span class="highlight-red">culture</span>.</h2>
+                    </div>
+                    <div class="about-details">
+                        <p class="lead">Economics student at USC exploring how markets, incentives, and technology shape human behavior.</p>
+                        <p>Deep in <strong>crypto and DeFi research</strong> — protocols, tokenomics, and building tools that make decentralized finance more accessible.</p>
+                        <p>Ethiopian roots, LA vibes. <strong>13 months of sunshine</strong> mindset — warm, optimistic, always building something new.</p>
+                        <div class="about-tags" role="list">
+                            <span class="about-tag tag-green" role="listitem">🎓 USC '25</span>
+                            <span class="about-tag tag-yellow" role="listitem">📊 Economics</span>
+                            <span class="about-tag tag-red" role="listitem">🔗 DeFi</span>
+                            <span class="about-tag tag-black" role="listitem">🎧 DJ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="eth-pattern-corner" aria-hidden="true"></div>
+        </section>
+
+        <section id="projects" class="projects" aria-label="Projects">
+            <div class="sunshine-rays" aria-hidden="true">
+                <div class="sun-center">☀️</div>
+                <div class="ray ray-1"></div>
+                <div class="ray ray-2"></div>
+                <div class="ray ray-3"></div>
+                <div class="ray ray-4"></div>
+                <div class="ray ray-5"></div>
+                <div class="ray ray-6"></div>
+                <div class="ray ray-7"></div>
+                <div class="ray ray-8"></div>
+            </div>
+            
+            <div class="container">
+                <header class="projects-header">
+                    <span class="section-label">
+                        <span class="geez-small" aria-label="Projects in Amharic">ፕሮጀክቶች</span> · Projects
+                    </span>
+                    <h2><span class="sunshine-text">13 Months of</span><br/><span class="sunshine-text">Sunshine</span> ☀️</h2>
+                    <p class="projects-sub">A year of building. One project at a time.</p>
+                </header>
+                
+                <div class="month-grid" role="list">
+                    <!-- Swap -->
+                    <article class="month-card month-green" role="listitem">
+                        <div class="card-accent"></div>
+                        <div class="month-header">
+                            <span class="month-num">01</span>
+                            <span class="month-label" aria-label="Meskerem - Ethiopian month">መስከረም</span>
+                        </div>
+                        <div class="project-badge badge-active">
+                            <span class="badge-dot" aria-hidden="true"></span> Building
+                        </div>
+                        <h3>Swap</h3>
+                        <p>A DeFi protocol for seamless token swaps. Building the infrastructure for efficient on-chain liquidity.</p>
+                        <div class="project-stack" aria-label="Technologies used">
+                            <span>DeFi</span>
+                            <span>Solidity</span>
+                            <span>React</span>
+                        </div>
+                        <div class="card-icon" aria-hidden="true">🔄</div>
+                    </article>
+
+                    <!-- Saba -->
+                    <article class="month-card month-yellow" role="listitem">
+                        <div class="card-accent"></div>
+                        <div class="month-header">
+                            <span class="month-num">02</span>
+                            <span class="month-label" aria-label="Tikimt - Ethiopian month">ጥቅምት</span>
+                        </div>
+                        <div class="project-badge badge-active">
+                            <span class="badge-dot" aria-hidden="true"></span> Building
+                        </div>
+                        <h3>Saba</h3>
+                        <p>Connecting diaspora communities through technology. A cultural bridge built with modern tools.</p>
+                        <div class="project-stack" aria-label="Technologies used">
+                            <span>React Native</span>
+                            <span>Node.js</span>
+                            <span>Community</span>
+                        </div>
+                        <div class="card-icon" aria-hidden="true">🇪🇹</div>
+                    </article>
+
+                    <!-- Pear Mobile -->
+                    <article class="month-card month-gold" role="listitem">
+                        <div class="card-accent"></div>
+                        <div class="month-header">
+                            <span class="month-num">03</span>
+                            <span class="month-label" aria-label="Hidar - Ethiopian month">ኅዳር</span>
+                        </div>
+                        <div class="project-badge badge-winner">🏆 1st Place</div>
+                        <h3>Pear Mobile</h3>
+                        <p>First place at pear.protocol hackathon. Mobile-first approach to protocol interaction and on-chain activity.</p>
+                        <div class="project-stack" aria-label="Technologies used">
+                            <span>React Native</span>
+                            <span>Web3</span>
+                            <span>TypeScript</span>
+                        </div>
+                        <div class="card-icon" aria-hidden="true">🍐</div>
+                    </article>
+
+                    <!-- Coming Soon -->
+                    <article class="month-card month-future" role="listitem">
+                        <div class="card-accent"></div>
+                        <div class="month-header">
+                            <span class="month-num">04+</span>
+                            <span class="month-label" aria-label="Tahsas onwards - Ethiopian months">ታኅሣስ...</span>
+                        </div>
+                        <h3>More Coming</h3>
+                        <p>The journey continues. New projects, new challenges, endless sunshine ahead.</p>
+                        <div class="card-icon" aria-hidden="true">✨</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact" aria-label="Contact">
+            <div class="container">
+                <div class="contact-card">
+                    <span class="section-label">
+                        <span class="geez-small" aria-label="Connect in Amharic">ይገናኙ</span> · Connect
+                    </span>
+                    <h2>Let's Build<br/>Something Together</h2>
+                    <p>Crypto, economics, or interesting ideas — always down to chat.</p>
+                    <div class="contact-actions">
+                        <a href="mailto:ateklu@usc.edu" class="btn btn-primary btn-large">
+                            <span>Say Hello</span>
+                            <span class="btn-emoji" aria-hidden="true">👋</span>
+                        </a>
+                    </div>
+                    <nav class="contact-links" aria-label="Social links">
+                        <a href="https://github.com/aaronteklu" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <span class="link-dot" aria-hidden="true">·</span>
+                        <a href="https://linkedin.com/in/aaronteklu" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <span class="link-dot" aria-hidden="true">·</span>
+                        <a href="mailto:ateklu@usc.edu">ateklu@usc.edu</a>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-brand">
-                    <span class="footer-logo"><span class="logo-geez">አ</span>AT</span>
+                    <span class="footer-logo"><span class="logo-geez" aria-hidden="true">አ</span>AT</span>
                     <span class="footer-tagline">13 months of building</span>
                 </div>
                 <div class="footer-info">
@@ -348,7 +385,7 @@
                     <p class="footer-copy">© 2025 Aaron Teklu</p>
                 </div>
             </div>
-            <div class="footer-stripe">
+            <div class="footer-stripe" aria-hidden="true">
                 <span class="stripe-green"></span>
                 <span class="stripe-yellow"></span>
                 <span class="stripe-red"></span>

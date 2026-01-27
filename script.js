@@ -1,11 +1,25 @@
+// ===== Loading Screen =====
+const loader = document.querySelector('.loader');
+
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        loader?.classList.add('hidden');
+        document.body.style.overflow = '';
+    }, 1200);
+});
+
+// Prevent scroll during loading
+document.body.style.overflow = 'hidden';
+
 // ===== Mobile Menu Toggle =====
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
 
 mobileMenuBtn?.addEventListener('click', () => {
-    mobileMenuBtn.classList.toggle('active');
+    const isOpen = mobileMenuBtn.classList.toggle('active');
     navLinks.classList.toggle('active');
-    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 
 // Close mobile menu when clicking a link
@@ -13,6 +27,7 @@ navLinks?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
         mobileMenuBtn.classList.remove('active');
         navLinks.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     });
 });
@@ -31,11 +46,10 @@ const tracks = [
 
 let currentTrack = 0;
 
-vinyl?.addEventListener('click', () => {
+function toggleVinyl() {
     vinyl.classList.toggle('paused');
     
     if (!vinyl.classList.contains('paused')) {
-        // Change track when resuming
         currentTrack = (currentTrack + 1) % tracks.length;
         if (npTrack) {
             npTrack.style.opacity = '0';
@@ -45,9 +59,16 @@ vinyl?.addEventListener('click', () => {
             }, 200);
         }
     }
+}
+
+vinyl?.addEventListener('click', toggleVinyl);
+vinyl?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleVinyl();
+    }
 });
 
-// Add smooth transition to track text
 if (npTrack) {
     npTrack.style.transition = 'opacity 0.2s ease';
 }
@@ -80,13 +101,11 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            // Once visible, stop observing
             observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Observe elements
 document.querySelectorAll('.month-card, .contact-card, .about-grid').forEach(el => {
     observer.observe(el);
 });
@@ -112,23 +131,13 @@ window.addEventListener('scroll', () => {
         });
         ticking = true;
     }
-});
-
-// ===== Project Card Interactions =====
-document.querySelectorAll('.month-card:not(.month-future)').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        // Add subtle sound effect simulation via vibration on mobile
-        if ('vibrate' in navigator) {
-            navigator.vibrate(5);
-        }
-    });
-});
+}, { passive: true });
 
 // ===== Navbar Active State on Scroll =====
 const sections = document.querySelectorAll('section[id]');
 const navItems = document.querySelectorAll('.nav-links a');
 
-window.addEventListener('scroll', () => {
+function updateNavActive() {
     const scrollY = window.scrollY + 150;
     
     sections.forEach(section => {
@@ -138,19 +147,22 @@ window.addEventListener('scroll', () => {
         
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
             navItems.forEach(item => {
-                item.style.color = '';
+                item.classList.remove('active');
                 if (item.getAttribute('href') === `#${sectionId}`) {
-                    item.style.color = 'var(--black)';
+                    item.classList.add('active');
                 }
             });
         }
     });
-});
+}
+
+window.addEventListener('scroll', updateNavActive, { passive: true });
 
 // ===== Easter Eggs =====
 console.log('%c☀️ 13 Months of Sunshine', 'font-size: 28px; font-weight: bold; color: #FCDD09; text-shadow: 2px 2px 0 #078930;');
-console.log('%cWelcome to Aaron\'s world!', 'font-size: 16px; font-weight: bold;');
+console.log('%cWelcome to Aaron\'s portfolio!', 'font-size: 16px; font-weight: bold;');
 console.log('%c🇪🇹 Ethiopian roots, building the future.', 'font-size: 14px; color: #078930;');
+console.log('%c\nHint: Try the Konami Code! ↑↑↓↓←→←→BA', 'font-size: 12px; color: #999;');
 
 // Konami Code
 let konamiProgress = 0;
@@ -172,7 +184,6 @@ function activateRainbow() {
     console.log('%c🎉 You found the secret! 🇪🇹', 'font-size: 24px;');
     
     document.body.style.transition = 'filter 0.5s ease';
-    document.body.style.filter = 'hue-rotate(0deg)';
     
     let hue = 0;
     const rainbowInterval = setInterval(() => {
@@ -186,25 +197,53 @@ function activateRainbow() {
     }, 50);
 }
 
-// ===== Page Load Animation =====
-document.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('loaded');
-});
-
 // ===== Handle reduced motion preference =====
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-if (prefersReducedMotion.matches) {
-    // Disable animations for users who prefer reduced motion
-    document.documentElement.style.setProperty('--transition', '0s');
-    
-    if (vinyl) {
-        vinyl.style.animation = 'none';
-        const labelInner = document.querySelector('.label-inner');
-        if (labelInner) labelInner.style.animation = 'none';
+function handleReducedMotion() {
+    if (prefersReducedMotion.matches) {
+        document.documentElement.style.setProperty('--transition', '0.01s');
+        
+        if (vinyl) {
+            vinyl.style.animation = 'none';
+            vinyl.classList.add('paused');
+            const labelInner = document.querySelector('.label-inner');
+            if (labelInner) labelInner.style.animation = 'none';
+        }
+        
+        document.querySelectorAll('.mura-flower').forEach(flower => {
+            flower.style.animation = 'none';
+        });
+        
+        const sunshineRays = document.querySelector('.sunshine-rays');
+        if (sunshineRays) sunshineRays.style.animation = 'none';
+        
+        // Hide loader immediately
+        loader?.classList.add('hidden');
+        document.body.style.overflow = '';
     }
-    
-    document.querySelectorAll('.mura-flower').forEach(flower => {
-        flower.style.animation = 'none';
-    });
+}
+
+handleReducedMotion();
+prefersReducedMotion.addEventListener('change', handleReducedMotion);
+
+// ===== Focus management for accessibility =====
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+        document.body.classList.add('keyboard-nav');
+    }
+});
+
+document.addEventListener('mousedown', () => {
+    document.body.classList.remove('keyboard-nav');
+});
+
+// Add skip link functionality
+const mainContent = document.querySelector('main');
+if (mainContent && !document.querySelector('.skip-link')) {
+    const skipLink = document.createElement('a');
+    skipLink.href = '#about';
+    skipLink.className = 'skip-link';
+    skipLink.textContent = 'Skip to main content';
+    document.body.insertBefore(skipLink, document.body.firstChild);
 }

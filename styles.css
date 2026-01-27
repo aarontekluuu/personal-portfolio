@@ -5,6 +5,58 @@
     box-sizing: border-box;
 }
 
+/* ===== Loading Screen ===== */
+.loader {
+    position: fixed;
+    inset: 0;
+    background: var(--cream, #FFFEF5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.loader-flower {
+    animation: loaderSpin 2s linear infinite;
+}
+
+.loader-petals {
+    transform-origin: center;
+    animation: loaderPulse 1s ease-in-out infinite;
+}
+
+@keyframes loaderSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes loaderPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.loader-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #666;
+    letter-spacing: 0.05em;
+}
+
 :root {
     /* Ethiopian Flag Colors */
     --green: #078930;
@@ -1178,3 +1230,78 @@ footer {
 .month-card:nth-child(2) { transition-delay: 0.1s; }
 .month-card:nth-child(3) { transition-delay: 0.2s; }
 .month-card:nth-child(4) { transition-delay: 0.3s; }
+
+/* ===== Accessibility ===== */
+.skip-link {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--black);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 0 0 12px 12px;
+    font-family: var(--font);
+    font-weight: 600;
+    text-decoration: none;
+    z-index: 10000;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Keyboard navigation focus styles */
+.keyboard-nav *:focus {
+    outline: 3px solid var(--yellow);
+    outline-offset: 3px;
+}
+
+.keyboard-nav .btn:focus {
+    outline-offset: 5px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .loader {
+        display: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --gray-200: #999;
+        --gray-400: #666;
+        --gray-600: #333;
+    }
+    
+    .month-card, .contact-card {
+        border-width: 4px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .loader, .murakami-flowers, .ethiopian-banner,
+    .vinyl-wrapper, .sunshine-rays, .scroll-hint,
+    .eth-pattern-corner, .footer-stripe {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    section {
+        page-break-inside: avoid;
+    }
+}
