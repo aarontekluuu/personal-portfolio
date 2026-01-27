@@ -108,6 +108,22 @@ a {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--gray-500);
+    position: relative;
+}
+
+.nav-links a:not(.nav-contact)::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--white);
+    transition: width 0.3s var(--ease);
+}
+
+.nav-links a:not(.nav-contact):hover::after {
+    width: 100%;
 }
 
 .nav-links a:hover {
@@ -118,10 +134,13 @@ a {
     padding: 0.5rem 1rem;
     border: 1px solid var(--gray-700);
     border-radius: 2px;
+    transition: all 0.3s var(--ease);
 }
 
 .nav-contact:hover {
-    border-color: var(--gray-500);
+    border-color: var(--white);
+    background: var(--white);
+    color: var(--black);
 }
 
 /* ===== Hero ===== */
@@ -217,6 +236,33 @@ a {
     box-shadow: 
         0 0 0 2px rgba(255,255,255,0.05),
         0 20px 60px rgba(0,0,0,0.5);
+    transition: transform 0.6s var(--ease), box-shadow 0.6s var(--ease);
+}
+
+.vinyl:hover {
+    transform: scale(1.02);
+    box-shadow: 
+        0 0 0 2px rgba(255,255,255,0.08),
+        0 30px 80px rgba(0,0,0,0.6);
+}
+
+.vinyl::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(255,255,255,0.03) 10deg,
+        transparent 20deg
+    );
+    animation: vinylShine 4s linear infinite;
+}
+
+@keyframes vinylShine {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .vinyl-grooves {
@@ -485,6 +531,32 @@ a {
     border: 1px solid var(--gray-800);
     color: var(--gray-600);
     border-radius: 2px;
+    transition: all 0.3s var(--ease);
+}
+
+.project:hover .project-stack span {
+    border-color: var(--gray-700);
+    color: var(--gray-500);
+}
+
+/* Featured project (hackathon winner) */
+.project-featured {
+    background: linear-gradient(135deg, var(--black) 0%, rgba(255, 199, 44, 0.03) 100%);
+}
+
+.project-featured::after {
+    content: '🏆';
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    opacity: 0.3;
+    transition: all 0.4s var(--ease);
+}
+
+.project-featured:hover::after {
+    opacity: 0.6;
+    transform: scale(1.1) rotate(5deg);
 }
 
 /* ===== About Section ===== */
@@ -546,11 +618,28 @@ a {
 .social-links a {
     font-size: 0.9375rem;
     color: var(--gray-500);
-    transition: color 0.3s var(--ease);
+    transition: all 0.3s var(--ease);
+    position: relative;
+}
+
+.social-links a::before {
+    content: '↗';
+    position: absolute;
+    right: -1rem;
+    top: 0;
+    opacity: 0;
+    transform: translate(-4px, 4px);
+    transition: all 0.3s var(--ease);
+    font-size: 0.75rem;
 }
 
 .social-links a:hover {
     color: var(--white);
+}
+
+.social-links a:hover::before {
+    opacity: 0.5;
+    transform: translate(0, 0);
 }
 
 /* ===== Contact Section ===== */
