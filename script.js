@@ -1,3 +1,16 @@
+// ===== Loading Screen =====
+const loader = document.querySelector('.loader');
+
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        loader?.classList.add('hidden');
+        document.body.style.overflow = '';
+    }, 1800);
+});
+
+// Prevent scroll during loading
+document.body.style.overflow = 'hidden';
+
 // ===== Theme Toggle =====
 const themeToggle = document.querySelector('.theme-toggle');
 const html = document.documentElement;
@@ -168,6 +181,30 @@ document.querySelectorAll('.project-card').forEach((card, index) => {
 document.querySelectorAll('.skill-category').forEach((category, index) => {
     category.style.transitionDelay = `${index * 0.1}s`;
 });
+
+// ===== Skill Bar Animation =====
+const skillBars = document.querySelectorAll('.skill-progress');
+let skillsAnimated = false;
+
+const animateSkillBars = () => {
+    const skillsSection = document.querySelector('.skills-visual');
+    if (!skillsSection || skillsAnimated) return;
+    
+    const sectionTop = skillsSection.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    
+    if (sectionTop < windowHeight - 100) {
+        skillBars.forEach(bar => {
+            const progress = bar.dataset.progress;
+            bar.style.setProperty('--progress', `${progress}%`);
+            bar.classList.add('animate');
+        });
+        skillsAnimated = true;
+    }
+};
+
+window.addEventListener('scroll', animateSkillBars);
+animateSkillBars(); // Check on load
 
 // ===== Active Nav Link on Scroll =====
 const sections = document.querySelectorAll('section[id]');
