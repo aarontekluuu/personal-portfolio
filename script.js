@@ -44,6 +44,17 @@ if (prefersReducedMotion.matches) {
     });
 }
 
+// Keyboard navigation detection
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+        document.body.classList.add('keyboard-nav');
+    }
+});
+
+document.addEventListener('mousedown', () => {
+    document.body.classList.remove('keyboard-nav');
+});
+
 // Console signature
 console.log('%cAaron Teklu', 'font-size: 24px; font-weight: bold; color: #f5f5f5; background: #0a0a0a; padding: 10px 20px;');
 console.log('%cUSC Economics · DeFi · Builder', 'font-size: 12px; color: #888;');

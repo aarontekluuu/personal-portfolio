@@ -730,6 +730,10 @@ footer {
         margin: 0 auto;
     }
     
+    .hero-label {
+        justify-content: center;
+    }
+    
     .hero-desc {
         margin: 0 auto;
     }
@@ -748,6 +752,10 @@ footer {
         height: 70px;
     }
     
+    .label-text {
+        font-size: 1rem;
+    }
+    
     .scroll-indicator {
         display: none;
     }
@@ -757,6 +765,11 @@ footer {
         gap: 1.5rem;
     }
     
+    .project-featured::after {
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+    
     .project-stack {
         justify-content: flex-start;
     }
@@ -764,6 +777,15 @@ footer {
     .about-content {
         grid-template-columns: 1fr;
         gap: 4rem;
+    }
+    
+    .contact {
+        padding: 8rem 1.5rem;
+    }
+    
+    .contact::before {
+        width: 300px;
+        height: 300px;
     }
 }
 
@@ -776,16 +798,46 @@ footer {
         gap: 1.5rem;
     }
     
+    .nav-links a:not(.nav-contact)::after {
+        display: none;
+    }
+    
     .hero {
         padding: 8rem 1.5rem 4rem;
     }
     
-    .work, .about, .contact {
+    .work, .about {
         padding: 5rem 1.5rem;
+    }
+    
+    .section-header {
+        margin-bottom: 3rem;
     }
     
     .project {
         padding: 2rem 1.5rem;
+    }
+    
+    .project::before {
+        display: none;
+    }
+    
+    .project:hover {
+        padding-left: 1.5rem;
+    }
+    
+    .about-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    
+    .detail-group:last-child {
+        grid-column: span 2;
+    }
+    
+    .social-links {
+        flex-wrap: wrap;
     }
     
     footer {
@@ -801,16 +853,71 @@ footer {
         display: none;
     }
     
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .hero {
+        padding: 7rem 1.25rem 3rem;
+    }
+    
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 3rem;
+    }
+    
+    .hero-desc {
+        font-size: 1rem;
+    }
+    
+    .vinyl {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .vinyl-label {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .work, .about {
+        padding: 4rem 1.25rem;
+    }
+    
+    .project {
+        padding: 1.5rem 1.25rem;
     }
     
     .project-title {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
+    }
+    
+    .project-desc {
+        font-size: 0.9375rem;
     }
     
     .about-lead {
-        font-size: 1.375rem;
+        font-size: 1.25rem;
+    }
+    
+    .about-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .detail-group:last-child {
+        grid-column: span 1;
+    }
+    
+    .contact {
+        padding: 6rem 1.25rem;
+    }
+    
+    .contact h2 {
+        font-size: 2rem;
+    }
+    
+    .contact-email {
+        padding: 1rem 1.5rem;
+        font-size: 0.875rem;
     }
 }
 
@@ -850,6 +957,48 @@ footer {
 .project:nth-child(2) { transition-delay: 0.1s; }
 .project:nth-child(3) { transition-delay: 0.2s; }
 
+/* ===== Accessibility ===== */
+
+/* Skip link */
+.skip-link {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    color: var(--black);
+    padding: 1rem 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    z-index: 10000;
+    transition: top 0.3s var(--ease);
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+/* Focus states */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 4px;
+}
+
+.nav-contact:focus-visible {
+    outline-offset: 2px;
+}
+
+.contact-email:focus-visible {
+    outline-offset: 4px;
+}
+
+/* Keyboard navigation indicator */
+.keyboard-nav *:focus {
+    outline: 2px solid var(--white);
+    outline-offset: 4px;
+}
+
 /* ===== Reduced Motion ===== */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -858,12 +1007,34 @@ footer {
         transition-duration: 0.01ms !important;
     }
     
-    .vinyl {
+    .vinyl, .vinyl-label, .vinyl::after {
         animation: none;
     }
     
-    .vinyl-label {
+    .scroll-line::after {
         animation: none;
+    }
+    
+    .status-dot {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+/* ===== High Contrast ===== */
+@media (prefers-contrast: high) {
+    :root {
+        --gray-600: #999;
+        --gray-700: #888;
+        --gray-800: #666;
+    }
+    
+    .project {
+        border: 1px solid var(--gray-700);
+    }
+    
+    .grain {
+        display: none;
     }
 }
 
