@@ -9,10 +9,11 @@
     /* Ethiopian Flag Colors */
     --green: #078930;
     --green-light: #0FBF4A;
+    --green-soft: #E8F5E9;
     --yellow: #FCDD09;
-    --yellow-soft: #FFF3B0;
+    --yellow-soft: #FFF9C4;
     --red: #DA121A;
-    --red-soft: #FFE5E5;
+    --red-soft: #FFEBEE;
     
     /* Murakami palette */
     --pink: #FF69B4;
@@ -24,7 +25,8 @@
     --white: #ffffff;
     --cream: #FFFEF5;
     --black: #1a1a1a;
-    --gray-100: #f8f8f8;
+    --gray-50: #fafafa;
+    --gray-100: #f5f5f5;
     --gray-200: #e8e8e8;
     --gray-400: #aaaaaa;
     --gray-600: #666666;
@@ -51,6 +53,25 @@ body {
     overflow-x: hidden;
 }
 
+/* ===== Ethiopian Banner (Top Strip) ===== */
+.ethiopian-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    display: flex;
+    z-index: 1001;
+}
+
+.banner-stripe {
+    flex: 1;
+}
+
+.banner-stripe.green { background: var(--green); }
+.banner-stripe.yellow { background: var(--yellow); }
+.banner-stripe.red { background: var(--red); }
+
 /* ===== Murakami Smiling Flowers ===== */
 .murakami-flowers {
     position: fixed;
@@ -62,15 +83,16 @@ body {
 
 .mura-flower {
     position: absolute;
-    width: 80px;
-    height: 80px;
-    animation: floatFlower 15s ease-in-out infinite;
+    width: 70px;
+    height: 70px;
+    animation: floatFlower 20s ease-in-out infinite;
 }
 
-.mf-1 { top: 8%; left: 5%; animation-delay: 0s; }
-.mf-2 { top: 25%; right: 8%; animation-delay: -4s; transform: scale(0.7); }
-.mf-3 { top: 60%; left: 3%; animation-delay: -8s; transform: scale(0.5); }
-.mf-4 { top: 80%; right: 5%; animation-delay: -12s; transform: scale(0.6); }
+.mf-1 { top: 10%; left: 4%; animation-delay: 0s; }
+.mf-2 { top: 20%; right: 6%; animation-delay: -5s; transform: scale(0.8); }
+.mf-3 { top: 55%; left: 2%; animation-delay: -10s; transform: scale(0.6); }
+.mf-4 { top: 75%; right: 4%; animation-delay: -15s; transform: scale(0.7); }
+.mf-5 { top: 40%; right: 2%; animation-delay: -7s; transform: scale(0.5); }
 
 .petals {
     position: absolute;
@@ -80,55 +102,53 @@ body {
 
 .petals span {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
+    background: var(--color);
     top: 50%;
     left: 50%;
     transform-origin: center;
+    box-shadow: inset 0 -3px 0 rgba(0,0,0,0.1);
 }
 
-.mf-1 .petals span { background: var(--red); }
-.mf-2 .petals span { background: var(--yellow); }
-.mf-3 .petals span { background: var(--green); }
-.mf-4 .petals span { background: var(--pink); }
-
-.petals span:nth-child(1) { transform: translate(-50%, -50%) translateY(-25px); }
-.petals span:nth-child(2) { transform: translate(-50%, -50%) rotate(45deg) translateY(-25px); }
-.petals span:nth-child(3) { transform: translate(-50%, -50%) rotate(90deg) translateY(-25px); }
-.petals span:nth-child(4) { transform: translate(-50%, -50%) rotate(135deg) translateY(-25px); }
-.petals span:nth-child(5) { transform: translate(-50%, -50%) rotate(180deg) translateY(-25px); }
-.petals span:nth-child(6) { transform: translate(-50%, -50%) rotate(225deg) translateY(-25px); }
-.petals span:nth-child(7) { transform: translate(-50%, -50%) rotate(270deg) translateY(-25px); }
-.petals span:nth-child(8) { transform: translate(-50%, -50%) rotate(315deg) translateY(-25px); }
+.petals span:nth-child(1) { transform: translate(-50%, -50%) translateY(-20px); }
+.petals span:nth-child(2) { transform: translate(-50%, -50%) rotate(45deg) translateY(-20px); }
+.petals span:nth-child(3) { transform: translate(-50%, -50%) rotate(90deg) translateY(-20px); }
+.petals span:nth-child(4) { transform: translate(-50%, -50%) rotate(135deg) translateY(-20px); }
+.petals span:nth-child(5) { transform: translate(-50%, -50%) rotate(180deg) translateY(-20px); }
+.petals span:nth-child(6) { transform: translate(-50%, -50%) rotate(225deg) translateY(-20px); }
+.petals span:nth-child(7) { transform: translate(-50%, -50%) rotate(270deg) translateY(-20px); }
+.petals span:nth-child(8) { transform: translate(-50%, -50%) rotate(315deg) translateY(-20px); }
 
 .face {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     background: var(--white);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    font-size: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    color: var(--black);
 }
 
 @keyframes floatFlower {
-    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
-    25% { transform: translateY(-15px) rotate(5deg); opacity: 0.4; }
-    50% { transform: translateY(-8px) rotate(-3deg); opacity: 0.35; }
-    75% { transform: translateY(-20px) rotate(3deg); opacity: 0.4; }
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.25; }
+    25% { transform: translateY(-20px) rotate(10deg); opacity: 0.35; }
+    50% { transform: translateY(-10px) rotate(-5deg); opacity: 0.3; }
+    75% { transform: translateY(-25px) rotate(5deg); opacity: 0.35; }
 }
 
 /* ===== Navigation ===== */
 .navbar {
     position: fixed;
-    top: 0;
+    top: 4px;
     left: 0;
     right: 0;
     z-index: 1000;
@@ -224,13 +244,25 @@ body {
     border-radius: 2px;
 }
 
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 7px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -7px);
+}
+
 /* ===== Hero Section ===== */
 .hero {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    padding: 8rem 4rem 4rem;
+    padding: 10rem 4rem 4rem;
     position: relative;
     overflow: hidden;
     background: var(--cream);
@@ -246,8 +278,8 @@ body {
 }
 
 .vinyl {
-    width: 400px;
-    height: 400px;
+    width: 380px;
+    height: 380px;
     border-radius: 50%;
     background: 
         repeating-radial-gradient(
@@ -260,15 +292,17 @@ body {
     position: relative;
     animation: vinylSpin 8s linear infinite;
     box-shadow: 
-        0 0 0 15px #0a0a0a,
-        0 30px 60px rgba(0, 0, 0, 0.4);
+        0 0 0 12px #0a0a0a,
+        0 25px 50px rgba(0, 0, 0, 0.35);
     cursor: pointer;
-    transition: var(--transition);
+    transition: box-shadow 0.3s ease;
 }
 
 .vinyl:hover {
     animation-play-state: paused;
-    transform: scale(1.02);
+    box-shadow: 
+        0 0 0 12px #0a0a0a,
+        0 35px 70px rgba(0, 0, 0, 0.4);
 }
 
 .vinyl-label {
@@ -276,8 +310,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     background: conic-gradient(
         from 0deg,
@@ -291,8 +325,8 @@ body {
 }
 
 .label-inner {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     background: var(--cream);
     display: flex;
@@ -304,7 +338,7 @@ body {
 
 .label-text {
     font-family: var(--font);
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--black);
     line-height: 1;
@@ -312,10 +346,10 @@ body {
 
 .label-sub {
     font-family: var(--font);
-    font-size: 0.6rem;
+    font-size: 0.5rem;
     font-weight: 600;
     color: var(--gray-600);
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
 }
 
 .vinyl::after {
@@ -324,8 +358,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
     background: var(--black);
     border-radius: 50%;
     z-index: 10;
@@ -340,8 +374,8 @@ body {
     border-radius: 50%;
     background: linear-gradient(
         135deg,
-        rgba(255,255,255,0.1) 0%,
-        transparent 50%,
+        rgba(255,255,255,0.15) 0%,
+        transparent 40%,
         rgba(0,0,0,0.1) 100%
     );
     pointer-events: none;
@@ -355,21 +389,6 @@ body {
 @keyframes vinylSpinReverse {
     from { transform: rotate(0deg); }
     to { transform: rotate(-360deg); }
-}
-
-/* Ethiopian Cross Pattern */
-.eth-pattern {
-    position: absolute;
-    bottom: 5%;
-    left: 5%;
-    opacity: 0.05;
-    z-index: 1;
-}
-
-.eth-cross {
-    width: 200px;
-    height: 200px;
-    fill: var(--green);
 }
 
 /* Hero Content */
@@ -390,11 +409,21 @@ body {
     font-family: var(--font);
     font-weight: 600;
     box-shadow: 4px 4px 0 var(--black);
+    transition: var(--transition);
+}
+
+.hero-badge:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--black);
 }
 
 .geez-text {
     color: var(--green);
     font-size: 1.1rem;
+}
+
+.geez-small {
+    color: var(--green);
 }
 
 .divider {
@@ -407,7 +436,7 @@ body {
 
 .hero-name {
     font-family: var(--font);
-    font-size: clamp(4rem, 10vw, 7rem);
+    font-size: clamp(3.5rem, 9vw, 6.5rem);
     font-weight: 700;
     line-height: 0.95;
     letter-spacing: -0.04em;
@@ -435,7 +464,7 @@ body {
     flex-wrap: wrap;
     gap: 0.75rem;
     font-family: var(--font);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 500;
     color: var(--gray-600);
     margin-bottom: 2.5rem;
@@ -594,6 +623,8 @@ body {
     background: var(--white);
     border-top: 3px solid var(--black);
     border-bottom: 3px solid var(--black);
+    position: relative;
+    overflow: hidden;
 }
 
 .about-grid {
@@ -601,6 +632,8 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 6rem;
     align-items: start;
+    position: relative;
+    z-index: 2;
 }
 
 .section-label {
@@ -635,7 +668,7 @@ body {
 }
 
 .about-details .lead {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 500;
     color: var(--black);
     margin-bottom: 1.5rem;
@@ -647,6 +680,10 @@ body {
     color: var(--gray-600);
     margin-bottom: 1.25rem;
     line-height: 1.8;
+}
+
+.about-details strong {
+    color: var(--black);
 }
 
 .about-tags {
@@ -663,31 +700,107 @@ body {
     padding: 0.6rem 1.25rem;
     border-radius: 50px;
     border: 2px solid var(--black);
+    transition: var(--transition);
 }
 
-.tag-green { background: var(--green); color: white; }
-.tag-yellow { background: var(--yellow); color: var(--black); }
-.tag-red { background: var(--red); color: white; }
+.about-tag:hover {
+    transform: translateY(-3px);
+}
+
+.tag-green { background: var(--green); color: white; border-color: var(--green); }
+.tag-yellow { background: var(--yellow); color: var(--black); border-color: var(--yellow); }
+.tag-red { background: var(--red); color: white; border-color: var(--red); }
 .tag-black { background: var(--black); color: white; }
+
+/* Ethiopian Pattern Corner */
+.eth-pattern-corner {
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    opacity: 0.03;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            var(--green) 0px,
+            var(--green) 10px,
+            var(--yellow) 10px,
+            var(--yellow) 20px,
+            var(--red) 20px,
+            var(--red) 30px
+        );
+    transform: rotate(15deg);
+    pointer-events: none;
+}
 
 /* ===== Projects Section ===== */
 .projects {
     padding: 8rem 0;
     background: var(--cream);
+    position: relative;
+    overflow: hidden;
 }
+
+/* Sunshine Rays Decoration */
+.sunshine-rays {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.sun-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+}
+
+.ray {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 4px;
+    background: var(--yellow);
+    transform-origin: left center;
+}
+
+.ray-1 { transform: rotate(0deg); }
+.ray-2 { transform: rotate(45deg); }
+.ray-3 { transform: rotate(90deg); }
+.ray-4 { transform: rotate(135deg); }
+.ray-5 { transform: rotate(180deg); }
+.ray-6 { transform: rotate(225deg); }
+.ray-7 { transform: rotate(270deg); }
+.ray-8 { transform: rotate(315deg); }
 
 .projects-header {
     text-align: center;
     margin-bottom: 4rem;
+    position: relative;
+    z-index: 2;
 }
 
 .projects-header h2 {
     font-family: var(--font);
-    font-size: clamp(3rem, 7vw, 5rem);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     font-weight: 700;
     line-height: 1;
     letter-spacing: -0.03em;
     margin-bottom: 1rem;
+}
+
+.sunshine-text {
+    background: linear-gradient(135deg, var(--yellow), var(--orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .projects-sub {
@@ -695,54 +808,63 @@ body {
     color: var(--gray-600);
 }
 
-/* Month Grid - Calendar Style */
+/* Month Grid */
 .month-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 .month-card {
     background: var(--white);
     border: 3px solid var(--black);
-    border-radius: 20px;
+    border-radius: 24px;
     padding: 2rem;
     position: relative;
     transition: var(--transition);
     overflow: hidden;
 }
 
-.month-card::before {
-    content: '';
+.card-accent {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 8px;
+    height: 6px;
     background: var(--gray-200);
 }
 
-.month-active::before { background: var(--green); }
-.month-winner::before { background: linear-gradient(90deg, var(--yellow), var(--orange)); }
-.month-future { opacity: 0.5; }
+.month-green .card-accent { background: var(--green); }
+.month-yellow .card-accent { background: var(--yellow); }
+.month-gold .card-accent { background: linear-gradient(90deg, var(--yellow), var(--orange)); }
+.month-future .card-accent { background: var(--gray-300); }
 
-.month-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 10px 10px 0 var(--black);
+.month-card:not(.month-future):hover {
+    transform: translateY(-10px) rotate(-1deg);
+    box-shadow: 12px 12px 0 var(--black);
 }
 
-.month-future:hover {
-    transform: none;
-    box-shadow: none;
+.month-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
-.month-number {
+.month-num {
     font-family: var(--font);
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
     color: var(--gray-200);
     line-height: 1;
-    margin-bottom: 1rem;
+}
+
+.month-label {
+    font-family: var(--font);
+    font-size: 0.85rem;
+    color: var(--gray-400);
 }
 
 .project-badge {
@@ -757,12 +879,12 @@ body {
     margin-bottom: 0.75rem;
 }
 
-.badge-gold {
+.badge-winner {
     background: var(--yellow);
     color: var(--black);
 }
 
-.month-content h3 {
+.month-card h3 {
     font-family: var(--font);
     font-size: 1.75rem;
     font-weight: 700;
@@ -770,7 +892,7 @@ body {
     letter-spacing: -0.02em;
 }
 
-.month-content p {
+.month-card p {
     font-size: 1rem;
     color: var(--gray-600);
     margin-bottom: 1.25rem;
@@ -793,18 +915,28 @@ body {
     border-radius: 4px;
 }
 
-.month-sun {
+.card-icon {
     position: absolute;
-    top: 1.5rem;
+    bottom: 1.5rem;
     right: 1.5rem;
-    font-size: 2rem;
-    opacity: 0.3;
+    font-size: 2.5rem;
+    opacity: 0.15;
     transition: var(--transition);
 }
 
-.month-card:hover .month-sun {
-    opacity: 1;
-    transform: scale(1.2) rotate(15deg);
+.month-card:hover .card-icon {
+    opacity: 0.5;
+    transform: scale(1.2) rotate(10deg);
+}
+
+.month-future {
+    opacity: 0.6;
+    border-style: dashed;
+}
+
+.month-future:hover {
+    transform: none;
+    box-shadow: none;
 }
 
 /* ===== Contact Section ===== */
@@ -823,6 +955,12 @@ body {
     border-radius: 24px;
     padding: 4rem;
     box-shadow: 8px 8px 0 var(--black);
+    transition: var(--transition);
+}
+
+.contact-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 var(--black);
 }
 
 .contact-card h2 {
@@ -870,14 +1008,20 @@ body {
 footer {
     background: var(--black);
     color: var(--white);
-    padding: 2rem 0;
-    border-top: 3px solid var(--black);
+    padding: 2.5rem 0 0;
 }
 
 .footer-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 2rem;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
 .footer-logo {
@@ -891,6 +1035,11 @@ footer {
 
 .footer-logo .logo-geez {
     color: var(--green);
+}
+
+.footer-tagline {
+    font-size: 0.85rem;
+    color: var(--gray-600);
 }
 
 .footer-info {
@@ -908,13 +1057,29 @@ footer {
     margin-top: 0.25rem;
 }
 
+.footer-stripe {
+    display: flex;
+    height: 6px;
+    margin-top: 1.5rem;
+}
+
+.stripe-green,
+.stripe-yellow,
+.stripe-red {
+    flex: 1;
+}
+
+.stripe-green { background: var(--green); }
+.stripe-yellow { background: var(--yellow); }
+.stripe-red { background: var(--red); }
+
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
     .hero {
         grid-template-columns: 1fr;
         text-align: center;
-        padding: 8rem 2rem 4rem;
-        gap: 4rem;
+        padding: 10rem 2rem 4rem;
+        gap: 3rem;
     }
     
     .vinyl-wrapper {
@@ -922,22 +1087,22 @@ footer {
     }
     
     .vinyl {
-        width: 300px;
-        height: 300px;
+        width: 280px;
+        height: 280px;
     }
     
     .vinyl-label {
-        width: 100px;
-        height: 100px;
+        width: 95px;
+        height: 95px;
     }
     
     .label-inner {
-        width: 70px;
-        height: 70px;
+        width: 65px;
+        height: 65px;
     }
     
     .label-text {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     
     .hero-tagline {
@@ -959,6 +1124,10 @@ footer {
     .about-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
+    }
+    
+    .month-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -992,7 +1161,7 @@ footer {
         display: none;
     }
     
-    .eth-pattern {
+    .sunshine-rays {
         display: none;
     }
     
@@ -1002,6 +1171,10 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .navbar {
+        top: 4px;
+    }
+    
     .nav-content {
         padding: 1rem 1.25rem;
     }
@@ -1011,16 +1184,34 @@ footer {
     }
     
     .hero {
-        padding: 7rem 1.25rem 3rem;
+        padding: 8rem 1.25rem 3rem;
     }
     
     .vinyl {
-        width: 250px;
-        height: 250px;
+        width: 220px;
+        height: 220px;
+    }
+    
+    .vinyl-label {
+        width: 75px;
+        height: 75px;
+    }
+    
+    .label-inner {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .label-text {
+        font-size: 1.1rem;
+    }
+    
+    .label-sub {
+        display: none;
     }
     
     .hero-badge {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         padding: 0.4rem 1rem;
     }
     
@@ -1047,8 +1238,12 @@ footer {
         justify-content: center;
     }
     
-    .month-grid {
-        grid-template-columns: 1fr;
+    .month-card {
+        padding: 1.5rem;
+    }
+    
+    .month-num {
+        font-size: 2.5rem;
     }
     
     .contact-card {
